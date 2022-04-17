@@ -7,19 +7,21 @@ const yargs = require('yargs')
 yargs
 	.scriptName('npm-csr')
 	.usage('$0 [命令]')
-	.command('origin', '切换为 npm 源', async () => {
-		const result = await setNpmRegistry('origin')
-		if (result) {
+	.command('npm', '切换为 npm 源', async () => {
+		try {
+			await setNpmRegistry('taobao')
 			return console.log('切换 npm 源成功')
+		} catch (error) {
+			throw new Error(`切换 npm 源失败: ${error.message}`)
 		}
-		throw new Error('切换 npm 源失败')
 	})
 	.command('taobao', '切换为淘宝源', async () => {
-		const result = await setNpmRegistry('taobao')
-		if (result) {
+		try {
+			await setNpmRegistry('taobao')
 			return console.log('切换淘宝源成功')
+		} catch (error) {
+			throw new Error(`切换淘宝源失败: ${error.message}`)
 		}
-		throw new Error('切换淘宝源失败')
 	})
 	.alias('h', 'help')
 	.alias('v', 'version')
