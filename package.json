@@ -30,7 +30,7 @@
 		"play": "esno demo/index.ts",
 		"test:watch": "vitest --watch",
 		"coverage": "vitest --coverage",
-		"prepublishOnly": "npm run build",
+		"prepublishOnly": "npm run build && node bin/index.js npm",
 		"build:watch": "npm run build -- --watch src",
 		"release": "bumpp --commit --push --tag && npm publish"
 	},

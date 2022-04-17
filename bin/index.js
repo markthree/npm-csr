@@ -9,7 +9,7 @@ yargs
 	.usage('$0 [命令]')
 	.command('npm', '切换为 npm 源', async () => {
 		try {
-			await setNpmRegistry('taobao')
+			await setNpmRegistry('npm')
 			return console.log('切换 npm 源成功')
 		} catch (error) {
 			throw new Error(`切换 npm 源失败: ${error.message}`)
