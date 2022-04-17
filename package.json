@@ -1,13 +1,13 @@
 {
-	"version": "0.0.0",
-	"name": "name",
+	"version": "0.0.1",
+	"name": "npm-csr",
 	"description": "description",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/name/repo.git"
+		"url": "git+https://github.com/markthree/npm-csr.git"
 	},
 	"exports": {
 		".": {
@@ -37,22 +37,24 @@
 		"utils"
 	],
 	"author": {
-		"name": "name",
-		"email": "xx@xx.com",
-		"url": "https://github.com/name"
+		"name": "markthree",
+		"email": "1801982702@qq.com",
+		"url": "https://github.com/markthree"
 	},
 	"bugs": {
-		"email": "xx@xx.com",
-		"url": "https://github.com/name/repo/issues"
+		"email": "1801982702@qq.com",
+		"url": "https://github.com/markthree/npm-csr/issues"
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^17.0.24",
 		"bumpp": "^7.1.1",
 		"c8": "^7.11.0",
 		"esno": "^0.14.1",
 		"tsup": "^5.12.5",
 		"typescript": "^4.6.3",
 		"vitest": "^0.1.27"
+	},
+	"dependencies": {
+		"@types/node": "^17.0.24"
 	}
 }
