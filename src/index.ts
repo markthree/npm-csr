@@ -11,13 +11,5 @@ export const setNpmRegistry = async (
 ) => {
 	const execPromisify = promisify(exec)
 	const registry = registrys[type] || registrys.origin
-	try {
-		await execPromisify(
-			`npm config set registry ${registry}`
-		)
-		return true
-	} catch (error: any) {
-		console.log(error.message)
-		return false
-	}
+	await execPromisify(`npm config set registry ${registry}`)
 }
