@@ -16,5 +16,10 @@ export const setNpmRegistry = async (
 ) => {
 	const execPromisify = promisify(exec)
 	const registry = registrys[type] || registrys.npm
-	await execPromisify(`npm config set registry ${registry}`)
+	const { stderr } = await execPromisify(
+		`npm config set registry ${registry}`
+	)
+	if (stderr) {
+		throw new Error(`npm-csr.error: ${stderr}`)
+	}
 }
