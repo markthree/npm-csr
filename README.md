@@ -1,75 +1,64 @@
-# node-lib-template
+# npm-csr
 
-开箱即用的 node 库模板
+快速切换 `npm` 源
 
 <br />
 
-## features 🦕
+## 动机 🦕
 
-- pnpm 的
-- vitest 测试
-- 开箱即用的
-- typescript 的
+不想每次记住太长的镜像地址
 
 <br />
 <br />
 
-## Usage 🦖
+## 使用 🦖
 
-### install
-
-```shell
-pnpm i
-```
-
-### test
+### 安装
 
 ```shell
-pnpm test
-
-// or pnpm test:watch
+npm i npm-csr -g
 ```
 
-### build
+<br />
+
+### 命令式
+
+#### npm
 
 ```shell
-pnpm build
-
-// pnpm build:watch
+# 切换为 npm 源
+npm-csr npm
 ```
 
-### coverage
+#### taobao
 
 ```shell
-pnpm coverage
+# 切换为淘宝源
+npm-csr taobao
 ```
 
-### dev
+<br />
 
-```shell
-pnpm dev
+### 编程式
+
+```ts
+const { setNpmRegistry } = require('npm-csr')
+
+// 切换为 npm 源
+await setNpmRegistry('npm')
+
+// 切换为 cnpm 源
+await setNpmRegistry('cnpm')
 ```
 
-### release
-
-```shell
-pnpm release
-```
-
-### play
-
-```shell
-pnpm play
-```
-
+<br />
 <br />
 <br />
 
 ## License
 
-Made with [name](https://github.com/name)
+Made with [markthree](https://github.com/markthree)
 
 Published under [MIT License](./LICENSE).
-
 
 <br />
