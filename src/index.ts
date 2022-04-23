@@ -3,7 +3,7 @@ import { exec } from 'child_process'
 
 const registrys = {
 	npm: 'https://registry.npmjs.org',
-	taobao: 'https://registry.npm.taobao.org'
+	taobao: 'https://registry.npmmirror.com'
 }
 
 /**
