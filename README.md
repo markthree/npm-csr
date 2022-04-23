@@ -48,7 +48,7 @@ const { setNpmRegistry } = require('npm-csr')
 await setNpmRegistry('npm')
 
 // 切换为 cnpm 源
-await setNpmRegistry('cnpm')
+await setNpmRegistry('taobao')
 ```
 
 <br />
