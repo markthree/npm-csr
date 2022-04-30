@@ -23,18 +23,25 @@ npm i npm-csr -g
 
 ### 命令式
 
-#### npm
+#### 获取
 
 ```shell
 # 切换为 npm 源
 npm-csr npm
 ```
 
-#### taobao
+#### 切换 npm
 
 ```shell
-# 切换为淘宝源
-npm-csr taobao
+# 切换为 npm 源
+npm-csr npm
+```
+
+#### 切换 cnpm
+
+```shell
+# 切换为 cnpm 源
+npm-csr cnpm
 ```
 
 <br />
@@ -42,13 +49,19 @@ npm-csr taobao
 ### 编程式
 
 ```ts
-const { setNpmRegistry } = require('npm-csr')
+const {
+	setNpmRegistry,
+	getCurrentNpmRegistry
+} = require('npm-csr')
 
 // 切换为 npm 源
 await setNpmRegistry('npm')
 
 // 切换为 cnpm 源
-await setNpmRegistry('taobao')
+await setNpmRegistry('cnpm')
+
+// 获取当前 npm 源
+await getCurrentNpmRegistry()
 ```
 
 <br />

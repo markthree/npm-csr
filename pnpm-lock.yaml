@@ -5,7 +5,6 @@ specifiers:
   '@types/yargs': ^17.0.10
   bumpp: ^7.1.1
   c8: ^7.11.0
-  consola: ^2.15.3
   esno: ^0.14.1
   ora: ^6.1.0
   tsup: ^5.12.5
@@ -15,7 +14,6 @@ specifiers:
 
 dependencies:
   '@types/node': 17.0.24
-  consola: 2.15.3
   ora: 6.1.0
   yargs: 17.4.1
 
@@ -334,10 +332,6 @@ packages:
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
-
-  /consola/2.15.3:
-    resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
-    dev: false
 
   /convert-source-map/1.8.0:
     resolution: {integrity: sha512-+OQdjP49zViI/6i7nIJpA8rAl4sV/JdPfU9nZs3VqOwGIgizICvuN2ru6fMd+4llL0tar18UYJXfZ/TWtmhUjA==}

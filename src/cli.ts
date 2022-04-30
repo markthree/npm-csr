@@ -43,14 +43,14 @@ yargs
 			spinner.stop()
 		}
 	})
-	.command('taobao', '切换为淘宝源', async () => {
+	.command('taobao', '切换为 cnpm 源', async () => {
 		try {
-			spinner.start('切换淘宝源中\n')
-			await setNpmRegistry('taobao')
-			return spinner.succeed('切换淘宝源成功')
+			spinner.start('切换 cnpm 源中\n')
+			await setNpmRegistry('cnpm')
+			return spinner.succeed('切换 cnpm 源成功')
 		} catch (error: any) {
 			throw new Error(
-				`npm-csr: 切换淘宝源失败, ${error.message}`
+				`npm-csr: 切换 cnpm 源失败, ${error.message}`
 			)
 		} finally {
 			spinner.stop()

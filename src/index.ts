@@ -3,7 +3,7 @@ import { exec } from 'child_process'
 
 export const registrys = {
 	npm: 'https://registry.npmjs.org/',
-	taobao: 'https://registry.npmmirror.com/'
+	cnpm: 'https://registry.npmmirror.com/'
 }
 
 type RegistryKey = keyof typeof registrys
@@ -28,7 +28,7 @@ export const setNpmRegistry = async (
 
 /**
  * 获取当前源
- * @returns { Promise<'npm' | 'taobao' | undefined> }  源类型
+ * @returns { Promise<'npm' | 'cnpm' | undefined> }  源类型
  */
 export const getCurrentNpmRegistry = async () => {
 	const execPromisify = promisify(exec)
