@@ -6,6 +6,7 @@ export default defineConfig({
 	minify: true,
 	splitting: true,
 	outDir: 'dist',
+	noExternal: ['ora'],
 	format: ['cjs', 'esm'],
-	entry: ['src/index.ts']
+	entry: ['src/index.ts', 'src/cli.ts']
 })

@@ -27,11 +27,10 @@
 		"build": "tsup",
 		"test": "vitest",
 		"dev": "esno src/index.ts",
-		"play": "esno demo/index.ts",
 		"test:watch": "vitest --watch",
 		"coverage": "vitest --coverage",
-		"prepublishOnly": "npm run build && node bin/index.js npm",
 		"build:watch": "npm run build -- --watch src",
+		"prepublishOnly": "npm run build && node bin/index.js npm",
 		"release": "bumpp --commit --push --tag && npm publish"
 	},
 	"keywords": [
@@ -51,6 +50,7 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
+		"@types/yargs": "^17.0.10",
 		"bumpp": "^7.1.1",
 		"c8": "^7.11.0",
 		"esno": "^0.14.1",
@@ -60,6 +60,8 @@
 	},
 	"dependencies": {
 		"@types/node": "^17.0.24",
+		"consola": "^2.15.3",
+		"ora": "^6.1.0",
 		"yargs": "^17.4.1"
 	}
 }
