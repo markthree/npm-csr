@@ -43,7 +43,7 @@ yargs
 			spinner.stop()
 		}
 	})
-	.command('taobao', '切换为 cnpm 源', async () => {
+	.command('cnpm', '切换为 cnpm 源', async () => {
 		try {
 			spinner.start('切换 cnpm 源中\n')
 			await setNpmRegistry('cnpm')
