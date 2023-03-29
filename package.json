@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1",
+  "version": "0.3.0",
   "name": "npm-csr",
   "description": "快速切换 npm 源",
   "main": "./dist/index.cjs",
