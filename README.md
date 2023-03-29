@@ -26,8 +26,8 @@ npm i npm-csr -g
 #### 获取
 
 ```shell
-# 切换为 npm 源
-npm-csr npm
+# 获取当前源
+npm-csr
 ```
 
 #### 切换 npm
@@ -50,18 +50,18 @@ npm-csr cnpm
 
 ```ts
 const {
-	setNpmRegistry,
-	getCurrentNpmRegistry
-} = require('npm-csr')
+  setNpmRegistry,
+  getCurrentNpmRegistry,
+} = require("npm-csr");
 
 // 切换为 npm 源
-await setNpmRegistry('npm')
+await setNpmRegistry("npm");
 
 // 切换为 cnpm 源
-await setNpmRegistry('cnpm')
+await setNpmRegistry("cnpm");
 
 // 获取当前 npm 源
-await getCurrentNpmRegistry()
+await getCurrentNpmRegistry();
 ```
 
 <br />
