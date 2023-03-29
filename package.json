@@ -1,66 +1,60 @@
 {
-	"version": "0.2.1",
-	"name": "npm-csr",
-	"description": "快速切换 npm 源",
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
-	"bin": {
-		"npm-csr": "bin/index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/markthree/npm-csr.git"
-	},
-	"exports": {
-		".": {
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
-		}
-	},
-	"files": [
-		"dist",
-		"bin"
-	],
-	"scripts": {
-		"build": "tsup",
-		"test": "vitest",
-		"dev": "esno src/index.ts",
-		"test:watch": "vitest --watch",
-		"coverage": "vitest --coverage",
-		"build:watch": "npm run build -- --watch src",
-		"prepublishOnly": "npm run build && node bin/index.js npm",
-		"release": "bumpp --commit --push --tag && npm publish"
-	},
-	"keywords": [
-		"lib",
-		"tool",
-		"node",
-		"utils"
-	],
-	"author": {
-		"name": "markthree",
-		"email": "1801982702@qq.com",
-		"url": "https://github.com/markthree"
-	},
-	"bugs": {
-		"email": "1801982702@qq.com",
-		"url": "https://github.com/markthree/npm-csr/issues"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"@types/yargs": "^17.0.10",
-		"bumpp": "^7.1.1",
-		"c8": "^7.11.0",
-		"esno": "^0.14.1",
-		"tsup": "^5.12.5",
-		"typescript": "^4.6.3",
-		"vitest": "^0.1.27"
-	},
-	"dependencies": {
-		"@types/node": "^17.0.24",
-		"ora": "^6.1.0",
-		"yargs": "^17.4.1"
-	}
+  "version": "0.2.1",
+  "name": "npm-csr",
+  "description": "快速切换 npm 源",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "npm-csr": "dist/cli.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markthree/npm-csr.git"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "npm run build && node dist/cli.cjs npm",
+    "release": "bumpp --commit --push --tag && npm publish"
+  },
+  "keywords": [
+    "lib",
+    "tool",
+    "node",
+    "utils"
+  ],
+  "author": {
+    "name": "markthree",
+    "email": "1801982702@qq.com",
+    "url": "https://github.com/markthree"
+  },
+  "bugs": {
+    "email": "1801982702@qq.com",
+    "url": "https://github.com/markthree/npm-csr/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/yargs": "^17.0.24",
+    "bumpp": "^9.0.0",
+    "execa": "^7.1.1",
+    "typescript": "^5.0.2",
+    "unbuild": "^1.1.2"
+  },
+  "dependencies": {
+    "kolorist": "^1.7.0",
+    "tasuku": "^2.0.1",
+    "yargs": "^17.7.1"
+  }
 }

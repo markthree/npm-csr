@@ -1,12 +1,11 @@
-import { promisify } from 'util'
-import { exec } from 'child_process'
+import { execa } from "execa";
 
 export const registrys = {
-	npm: 'https://registry.npmjs.org/',
-	cnpm: 'https://registry.npmmirror.com/'
-}
+  npm: "https://registry.npmjs.org/",
+  cnpm: "https://registry.npmmirror.com/",
+};
 
-type RegistryKey = keyof typeof registrys
+type RegistryKey = keyof typeof registrys;
 
 /**
  * 设置 npm 源
@@ -14,36 +13,36 @@ type RegistryKey = keyof typeof registrys
  * @returns
  */
 export const setNpmRegistry = async (
-	type: keyof typeof registrys
+  type: keyof typeof registrys,
 ) => {
-	const execPromisify = promisify(exec)
-	const registry = registrys[type] || registrys.npm
-	const { stderr } = await execPromisify(
-		`npm config set registry ${registry}`
-	)
-	if (stderr) {
-		throw new Error(`npm-csr.error: ${stderr}`)
-	}
-}
+  const registry = registrys[type] || registrys.npm;
+  const { stderr } = await execa(
+    `npm`,
+    [`config`, "set", "registry", registry],
+  );
+  if (stderr) {
+    throw new Error(`npm-csr.error: ${stderr}`);
+  }
+};
 
 /**
  * 获取当前源
  * @returns { Promise<'npm' | 'cnpm' | undefined> }  源类型
  */
 export const getCurrentNpmRegistry = async () => {
-	const execPromisify = promisify(exec)
-	const { stderr, stdout } = await execPromisify(
-		`npm config get registry`
-	)
-	if (stderr) {
-		throw new Error(`npm-csr.error: ${stderr}`)
-	}
+  const { stderr, stdout } = await execa(
+    `npm`,
+    ["config", "get", "registry"],
+  );
+  if (stderr) {
+    throw new Error(`npm-csr.error: ${stderr}`);
+  }
 
-	const keys = Object.keys(registrys)
+  const keys = Object.keys(registrys);
 
-	const value = stdout.trim()
+  const value = stdout.trim();
 
-	return keys.find(
-		k => registrys[k as RegistryKey] === value
-	) as RegistryKey
-}
+  return keys.find(
+    (k) => registrys[k as RegistryKey] === value,
+  ) as RegistryKey;
+};
