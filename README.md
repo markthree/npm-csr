@@ -1,5 +1,7 @@
 # npm-csr
 
+该方案已废弃，请改用 [dnrm](https://github.com/markthree/dnrm)
+
 快速切换 `npm` 源
 
 <br />
